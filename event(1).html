@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件驅動-(1) 設定事件</title>
+
+</head>
+<body>
+  <script>
+    function alertYou() {
+      alert("A Button is Clicked!");
+    }
+  </script>
+  <button onclick="alertYou()"> Do not click me</button>
+  <hr>
+  <script>
+    function keyAlertYou() {
+      alert("A Key is Pressed!");
+    }
+    document.onkeyup = function(event) {
+      var key = String.fromCharCode(event.keyCode);
+      if (key == "A") {
+        keyAlertYou();
+      }
+    }
+  </script>
+  <h3>Press "A" on your keyboard.</h3>
+</body>
+</html>

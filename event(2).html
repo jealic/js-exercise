@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件驅動-(2) 電燈開關</title>
+  <style>
+    .button {
+      margin-left: 10px;
+      display: inline-block;
+      padding: 45px 25px;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: purple;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: pink;}
+
+    .button:active {
+      background-color: pink;
+      box-shadow: 0 5px green;
+      transform: transliateY(4px);
+    }
+
+    .div {
+      margin-left: 10px;
+      padding: 25px 32px;
+      font-size: 24px;
+      text-align: center;
+      color: #fff;
+      background-color: #1e90ff;
+      border-style: solid;
+      border-color: #4bacf2;
+      border-width: 7px;
+    }
+  </style>
+  <script type="text/javascript" src="js/event(2).js"></script>
+</head>
+<body>
+  <table style="margin:0px auto;padding: 10px;border:2px solid;border-color:#1E90FF">
+      <tbody>
+      <tr>
+      <td rowspan="2">
+        <!--- 照片 -->
+        <img id="image" src="img/on.jpg" width="400" height="300">
+      </td>
+      <td>
+        <!--- 倒數計時器 -->
+        <div class="div" id="timer">5</div>
+      </td>
+      </tr>
+      <tr>
+      <td>
+        <!--- 開關燈按鈕 -->
+        <button class="button" onclick="switchLight();">ON<br>-<br>OFF</button></td>
+      </tr>
+      </tbody>
+    </table>
+</body>
+</html>
