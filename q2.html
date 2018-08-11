@@ -4,8 +4,32 @@
   <meta charset="UTF-8">
   <title>事件驅動-(3) 表單驗證</title>
   <style></style>
-  <script type="text/javascript" src="js/q2.js"></script>
+  <script>
+  'user strict';
+
+  function validate() {
+    var code = document.getElementById("nric").value;
+    if (code == "") {
+      alert("你沒有輸入任何資訊。");
+    } else if (!isNaN(code)) {
+      alert("身份證可不是純數字而已哦！");
+    } else if (code.length != 10) {
+      alert("你的資料長度有誤，再確認一下!");
+    } else {
+      var sex = nric.value[1];
+      console.log(sex);
+      if (sex=="1") {
+        document.getElementById("result").innerHTML = "通過驗證（♂）";
+      } else if (sex=="2") {
+        document.getElementById("result").innerHTML = "通過驗證（♀）";
+      } else {
+        document.getElementById("result").innerHTML = "通過驗證，但代表性別之數字必需是 1 或 2 。"
+      }
+    }
+  }
+  </script>
 </head>
+
 <body>
   <form action="">
     <table>
