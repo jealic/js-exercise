@@ -19,7 +19,7 @@ function createToDo(){
       alert("你並沒有輸入任何文字")
       return;
     }
-    this.parentNode.lastChild.innerHTML = input;
+    this.parentNode.firstChild.innerHTML = input;
     document.getElementById("input").value = "";
   }
   replaceButton.textContent = "R";

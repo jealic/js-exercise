@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>操作 HTML 元素 - To-Do List</title>
+  <style>
+    .cross-out {
+      color: grey;
+      text-decoration: line-through;
+    }
+  </style>
   <script>
-    'user strict';
-
     function createToDo(){
       var todo = document.createElement("div");
       var span = document.createElement("span");
@@ -25,7 +29,7 @@
           alert("你並沒有輸入任何文字")
           return;
         }
-        this.parentNode.lastChild.innerHTML = input;
+        this.parentNode.firstChild.innerHTML = input;
         document.getElementById("input").value = "";
       }
       replaceButton.textContent = "R";
@@ -34,13 +38,14 @@
       removeButton.textContent = "V";
       todo.appendChild(removeButton);
       removeButton.onclick = function() {
-        var r = confirm("真的要刪除嗎？")
-        if (r==true) {
-          this.parentNode.parentNode.removeChild(this.parentNode);
-        } else {
-          return;
+        if (confirm("點擊「確定」改字體顏色~")) {
+          span.classList.add("cross-out");
+          todo.removeChild(replaceButton);
+          todo.removeChild(removeButton);
         }
       }
+
+      
       
       document.getElementById("todolist").appendChild(todo);
       document.getElementById("input").value = "";
